@@ -1,3 +1,5 @@
+<% if logged_in? && (current_user == article.user || current_user.admin?) %>
+
 <h2 align="center">Title: <%= @article.title %></h2>
 <div class="well col-xs-8 col-xs-offset-2">
   <% if @article.user %>
@@ -28,3 +30,5 @@
     <%= link_to "View all articles", articles_path, class: "btn btn-xs btn-success" %>
   </div>
 </div>
+
+<% end %>
